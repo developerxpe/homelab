@@ -61,7 +61,7 @@ pages:
 
           - type: monitor
             cache: 1m
-            title: Services
+            title: Apps
             sites:
               - title: Webmin
                 url: https://192.168.1.127:10000/
@@ -71,12 +71,12 @@ pages:
 
           - type: monitor
             cache: 1m
-            title: Servarr
+            title: Services
             sites:
-              - title: Overseerr
-                url: https://request.hopki.net
-                check-url: http://10.0.0.202:5055
-                icon: di:overseerr
+              - title: Docker Engine
+                url: http://dockerproxy:2375
+                check-url: http://dockerproxy:2375/info
+                icon: di:docker
 
   - name: Home
     # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
