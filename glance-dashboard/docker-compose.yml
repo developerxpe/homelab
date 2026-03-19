@@ -7,3 +7,15 @@ services:
       - "8080:8080"
     volumes:
       - ./glance.yml:/app/config/glance.yml:ro
+    depends_on:
+      - dockerproxy
+
+  dockerproxy:
+    image: tecnativa/docker-socket-proxy:latest
+    container_name: dockerproxy
+    restart: unless-stopped
+    environment:
+      PING: 1
+      INFO: 1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
