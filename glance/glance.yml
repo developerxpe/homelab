@@ -61,22 +61,28 @@ pages:
 
           - type: monitor
             cache: 1m
-            title: Services
+            title: Apps
             sites:
               - title: Webmin
-                url: https://192.168.1.127:10000/
-                check-url: https://192.168.1.127:10000/
+                url: http://webmin.soydan.fun/
+                check-url: http://webmin.soydan.fun/
                 allow-insecure: true
                 icon: di:webmin
 
+              - title: NPM
+                url: http://npm.soydan.fun/
+                check-url: http://npm.soydan.fun/
+                allow-insecure: true
+                icon: di:npm
+
           - type: monitor
             cache: 1m
-            title: Servarr
+            title: Services
             sites:
-              - title: Overseerr
-                url: https://request.hopki.net
-                check-url: http://10.0.0.202:5055
-                icon: di:overseerr
+              - title: Docker Engine
+                url: 
+                check-url: http://dockerproxy:2375/info
+                icon: di:docker
 
   - name: Home
     # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look

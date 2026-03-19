@@ -1,0 +1,22 @@
+services:
+  dockerproxy:
+    image: tecnativa/docker-socket-proxy:latest
+    container_name: dockerproxy
+    restart: unless-stopped
+    environment:
+      PING: 1
+      INFO: 1
+      CONTAINERS: 1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  glance:
+    image: glanceapp/glance:latest
+    container_name: glance
+    restart: unless-stopped
+    depends_on:
+      - dockerproxy
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./glance/glance.yml:/app/config/glance.yml:ro
