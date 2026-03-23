@@ -38,3 +38,18 @@ services:
     container_name: cloudflared
     restart: unless-stopped
     command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+
+  twingate-connector:
+    image: "twingate/connector:1"
+    container_name: twingate-enigmatic-warthog
+    restart: unless-stopped
+    pull_policy: always
+    
+    environment:
+      - TWINGATE_NETWORK=${TWINGATE_NETWORK}
+      - TWINGATE_ACCESS_TOKEN=${TWINGATE_ACCESS_TOKEN}
+      - TWINGATE_REFRESH_TOKEN=${TWINGATE_REFRESH_TOKEN}
+      - TWINGATE_LABEL_HOSTNAME=${TWINGATE_LABEL_HOSTNAME}
+      - TWINGATE_LABEL_DEPLOYED_BY=${TWINGATE_LABEL_DEPLOYED_BY}
+    
+    network_mode: "host"
