@@ -74,6 +74,12 @@ pages:
                 check-url: http://npm.soydan.fun/
                 allow-insecure: true
                 icon: di:npm
+                
+              - title: Vaultwarden
+                url: http://sifre.soydan.fun/
+                check-url: http://sifre.soydan.fun/
+                allow-insecure: true
+                icon: di:vaultwarden
 
           - type: monitor
             cache: 1m

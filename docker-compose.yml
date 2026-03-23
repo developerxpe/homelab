@@ -33,12 +33,6 @@ services:
     volumes:
       - ./glance/glance.yml:/app/config/glance.yml:ro
 
-  cloudflared:
-    image: cloudflare/cloudflared:latest
-    container_name: cloudflared
-    restart: unless-stopped
-    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
-
   twingate-connector:
     image: "twingate/connector:1"
     container_name: twingate-enigmatic-warthog
@@ -53,3 +47,16 @@ services:
       - TWINGATE_LABEL_DEPLOYED_BY=${TWINGATE_LABEL_DEPLOYED_BY}
     
     network_mode: "host"
+
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
+    environment:
+      - DOMAIN=https://sifre.soydan.fun
+      - SIGNUPS_ALLOWED=false
+      - WEBSOCKET_ENABLED=true
+    volumes:
+      - ./vaultwarden/vw-data:/data
+    ports:
+      - 127.0.0.1:8000:80
