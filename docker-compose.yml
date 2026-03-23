@@ -10,6 +10,18 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
+  npm:
+    image: jc21/nginx-proxy-manager:2.11.3
+    container_name: npm
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "81:81"   # NPM panel
+    volumes:
+      - ./npm/data:/data
+      - ./npm/letsencrypt:/etc/letsencrypt
+
   glance:
     image: glanceapp/glance:latest
     container_name: glance
@@ -20,3 +32,9 @@ services:
       - "8080:8080"
     volumes:
       - ./glance/glance.yml:/app/config/glance.yml:ro
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
