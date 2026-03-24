@@ -11,7 +11,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
   npm:
-    image: jc21/nginx-proxy-manager:2.11.3
+    image: jc21/nginx-proxy-manager:latest
     container_name: npm
     restart: unless-stopped
     ports:
@@ -52,9 +52,11 @@ services:
     image: vaultwarden/server:latest
     container_name: vaultwarden
     restart: unless-stopped
+    depends_on:
+      - dockerproxy
     environment:
       - DOMAIN=https://sifre.soydan.fun
-      - SIGNUPS_ALLOWED=false
+      - SIGNUPS_ALLOWED=true
       - WEBSOCKET_ENABLED=true
     volumes:
       - ./vaultwarden/vw-data:/data

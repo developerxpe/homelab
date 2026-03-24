@@ -40,7 +40,7 @@ pages:
               </div>
 
           - type: repository
-            repository: developerxpe
+            repository: developerxpe/homelab
             pull-requests-limit: 5
             issues-limit: 3
             commits-limit: 3
