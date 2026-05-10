@@ -1,0 +1,1 @@
+2026/05/10 07:41:09 [warn] 241#241: *235 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/03/0000000031 while reading upstream, client: 172.17.0.6, server: docker.soydan.fun, request: "GET /api/motd HTTP/1.1", upstream: "https://192.168.1.135:9443/api/motd", host: "docker.soydan.fun", referrer: "https://docker.soydan.fun/"

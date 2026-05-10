@@ -12,33 +12,6 @@ pages:
 
       - size: small
         widgets:
-          - type: dns-stats
-            service: pihole
-            url: https://pihole.hopki.net
-            token: 12345abcdefghijk
-          - type: custom-api
-            title: Immich stats
-            cache: 1d
-            url: https://immich.hopki.net/api/server/statistics
-            headers:
-              x-api-key: 12345abcdefghijk
-              Accept: application/json
-            template: |
-              <div class="flex justify-between text-center">
-                <div>
-                    <div class="color-highlight size-h3">{{ .JSON.Int "photos" | formatNumber }}</div>
-                    <div class="size-h6">PHOTOS</div>
-                </div>
-                <div>
-                    <div class="color-highlight size-h3">{{ .JSON.Int "videos" | formatNumber }}</div>
-                    <div class="size-h6">VIDEOS</div>
-                </div>
-                <div>
-                    <div class="color-highlight size-h3">{{ div (.JSON.Int "usage" | toFloat) 1073741824 | toInt | formatNumber }}GB</div>
-                    <div class="size-h6">USAGE</div>
-                </div>
-              </div>
-
           - type: repository
             repository: developerxpe/homelab
             pull-requests-limit: 5
@@ -59,37 +32,41 @@ pages:
                 shortcut: "!gh"
                 url: https://github.com/search?q={QUERY}&type=repositories
 
+
+
+
+
           - type: monitor
             cache: 1m
-            title: Apps
+            title: Websites
             sites:
-              - title: Webmin
-                url: http://webmin.soydan.fun/
-                check-url: http://webmin.soydan.fun/
+              - title: Portainer
+                url: https://docker.soydan.fun/
+                check-url: https://portainer:9443
                 allow-insecure: true
-                icon: di:webmin
+                icon: di:portainer
 
               - title: NPM
                 url: http://npm.soydan.fun/
-                check-url: http://npm.soydan.fun/
+                check-url: http://npm:81
                 allow-insecure: true
                 icon: di:npm
                 
               - title: Vaultwarden
                 url: http://sifre.soydan.fun/
-                check-url: http://sifre.soydan.fun/
+                check-url: http://vaultwarden:80
                 allow-insecure: true
                 icon: di:vaultwarden
+                
+              - title: Beszel
+                url: http://stat.soydan.fun/
+                check-url: http://beszel:8090
+                allow-insecure: true
+                icon: di:beszel
 
-          - type: monitor
+          - type: docker-containers
             cache: 1m
             title: Services
-            sites:
-              - title: Docker Engine
-                url: 
-                check-url: http://dockerproxy:2375/info
-                icon: di:docker
-
   - name: Home
     # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
     # hide-desktop-navigation: true

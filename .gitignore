@@ -1,2 +1,8 @@
 .secret
 .env
+.DS_Store
+cloudflared
+beszel_data
+beszel_socket
+beszel_agent_data
+coolify

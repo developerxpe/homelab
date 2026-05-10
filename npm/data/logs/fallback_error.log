@@ -1,0 +1,11 @@
+2026/05/04 03:24:15 [error] 201#201: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: nginxproxymanager, request: "GET /api/ HTTP/1.1", upstream: "http://127.0.0.1:3000/", host: "localhost:81", referrer: "http://localhost:81/nginx/proxy"
+2026/05/04 03:24:16 [error] 201#201: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: nginxproxymanager, request: "GET /api/ HTTP/1.1", upstream: "http://127.0.0.1:3000/", host: "localhost:81", referrer: "http://localhost:81/nginx/proxy"
+2026/05/04 04:09:25 [warn] 204#204: 512 worker_connections are not enough, reusing connections
+2026/05/04 04:09:25 [warn] 205#205: 512 worker_connections are not enough, reusing connections
+2026/05/06 17:35:14 [warn] 190#190: 512 worker_connections are not enough, reusing connections
+2026/05/06 17:35:14 [warn] 189#189: 512 worker_connections are not enough, reusing connections
+2026/05/06 17:35:15 [warn] 190#190: 512 worker_connections are not enough, reusing connections
+2026/05/06 17:35:15 [warn] 189#189: 512 worker_connections are not enough, reusing connections
+2026/05/06 19:13:45 [warn] 190#190: 512 worker_connections are not enough, reusing connections
+2026/05/06 19:13:45 [warn] 189#189: 512 worker_connections are not enough, reusing connections
+2026/05/06 19:13:47 [warn] 190#190: 512 worker_connections are not enough, reusing connections
