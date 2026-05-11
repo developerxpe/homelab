@@ -1,6 +1,9 @@
 .secret
 .env
 .DS_Store
+.DS_Store
+.DS_Store
+vw-data
 cloudflared
 beszel_data
 beszel_socket

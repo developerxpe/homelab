@@ -64,6 +64,12 @@ pages:
                 allow-insecure: true
                 icon: di:beszel
 
+              - title: Coolify
+                url: http://server.soydan.fun/
+                check-url: http://192.168.1.135:8000
+                allow-insecure: true
+                icon: di:coolify
+
           - type: docker-containers
             cache: 1m
             title: Services
