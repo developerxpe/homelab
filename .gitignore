@@ -1,11 +1,23 @@
+# --- gizli / yerel ---
 .secret
 .env
-.DS_Store
-.DS_Store
-.DS_Store
+**/.DS_Store
+
+# --- yerel veri dizinleri ---
 vw-data
 cloudflared
 beszel_data
 beszel_socket
 beszel_agent_data
 coolify
+
+# --- runtime / uretilen dosyalar (repoda tutulmaz) ---
+npm/letsencrypt
+npm/data/logs/
+npm/data/database.sqlite
+npm/data/keys.json
+__pycache__/
+
+# --- yerel konteyner konfigurasyonu (diskte kalir, takip edilmez) ---
+pma/
+foto/
