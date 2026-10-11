@@ -20,4 +20,5 @@ __pycache__/
 
 # --- yerel konteyner konfigurasyonu (diskte kalir, takip edilmez) ---
 pma/
-foto/
+foto/*
+!foto/Dockerfile
