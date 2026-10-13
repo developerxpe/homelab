@@ -221,7 +221,7 @@ services:
   foto:
     build:
       context: ./foto
-    image: php:8.3-apache
+    image: foto-app:8.3
     container_name: foto
     restart: unless-stopped
     ports:
