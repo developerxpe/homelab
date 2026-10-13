@@ -70,6 +70,12 @@ pages:
                 allow-insecure: true
                 icon: di:coolify
 
+              - title: phpMyAdmin
+                url: http://pma.soydan.fun/
+                check-url: http://pma:80
+                allow-insecure: true
+                icon: di:phpmyadmin
+
           - type: docker-containers
             cache: 1m
             title: Services
