@@ -1,6 +1,3 @@
-tunnel: 377e57ce-5f33-4fa0-b523-e23760837deb
-credentials-file: /etc/cloudflared/377e57ce-5f33-4fa0-b523-e23760837deb.json
-
 ingress:
   - hostname: soydan.site
     service: http://npm:80

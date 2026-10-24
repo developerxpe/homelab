@@ -34,7 +34,7 @@ services:
     image: cloudflare/cloudflared:latest
     container_name: cloudflared
     restart: unless-stopped
-    command: tunnel --config /etc/cloudflared/config.yml run
+    command: tunnel --config /etc/cloudflared/config.yml run --credentials-file /etc/cloudflared/credentials.json ${CLOUDFLARE_TUNNEL_ID}
     volumes:
       - ./cloudflared:/etc/cloudflared:ro
     depends_on:
