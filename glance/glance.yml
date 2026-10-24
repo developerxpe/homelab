@@ -41,37 +41,37 @@ pages:
             title: Websites
             sites:
               - title: Portainer
-                url: https://docker.soydan.fun/
+                url: https://docker.soydan.site/
                 check-url: https://portainer:9443
                 allow-insecure: true
                 icon: di:portainer
 
               - title: NPM
-                url: http://npm.soydan.fun/
+                url: http://npm.soydan.site/
                 check-url: http://npm:81
                 allow-insecure: true
                 icon: di:npm
                 
               - title: Vaultwarden
-                url: http://sifre.soydan.fun/
+                url: http://sifre.soydan.site/
                 check-url: http://vaultwarden:80
                 allow-insecure: true
                 icon: di:vaultwarden
                 
               - title: Beszel
-                url: http://stat.soydan.fun/
+                url: http://stat.soydan.site/
                 check-url: http://beszel:8090
                 allow-insecure: true
                 icon: di:beszel
 
               - title: Coolify
-                url: http://server.soydan.fun/
+                url: http://server.soydan.site/
                 check-url: http://192.168.1.135:8000
                 allow-insecure: true
                 icon: di:coolify
 
               - title: phpMyAdmin
-                url: http://pma.soydan.fun/
+                url: http://pma.soydan.site/
                 check-url: http://pma:80
                 allow-insecure: true
                 icon: di:phpmyadmin
